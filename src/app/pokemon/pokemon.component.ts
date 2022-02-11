@@ -16,12 +16,6 @@ export class PokemonComponent implements OnInit {
   pokemon_previous!: string;
   pokemon_results!: [];
 
-  //ability
-  ability_count!: number;
-  ability_next!: string;
-  ability_previous!: string;
-  ability_results!: [];
-
   ngOnInit() {
     this.pokemonService.getPokemon().subscribe((data: any) => {
 
@@ -37,19 +31,6 @@ export class PokemonComponent implements OnInit {
       console.log(this.pokemon_results);      
     });
     
-    this.pokemonService.getAbility().subscribe((data: any) => {
-      this.ability_count = data.count;
-      this.ability_next = data.next;
-      this.ability_previous = data.previous;
-      this.ability_results = data.results;
-      
-      console.log("ABILITY");
-      console.log(this.ability_count);
-      console.log(this.ability_next);
-      console.log(this.ability_previous);
-      console.log(this.ability_results);
-    });
-
   }
 }
 

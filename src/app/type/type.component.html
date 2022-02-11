@@ -1,15 +1,15 @@
-<div class="app-item">
-  <p>ITEMS</p>
-  <span>pokemons count: {{ item_count }}</span>
+<div class="app-type">
+  <p>TYPES</p>
+  <span>pokemons count: {{ type_count }}</span>
   <br />
-  <span>pokemons previous: {{ item_previous }}</span>
+  <span>pokemons previous: {{ type_previous }}</span>
   <br />
-  <span>pokemons next: {{ item_next }}</span>
+  <span>pokemons next: {{ type_next }}</span>
   <br />
   <div class="row">
-    <div *ngFor="let data of item_results; let i = index" class="col-md-6">
+    <div *ngFor="let data of type_results; let i = index" class="col-md-6">
       <div class="card-deck">
-        <div class="card bg-primary">
+        <div class="card bg-danger">
           <div class="card-body text-center">
             <div>{{ i + 1 }}</div>
             <div>
