@@ -1,0 +1,23 @@
+<div class="app-item">
+  <p>ITEMS</p>
+  <span>pokemons count: {{ item_count }}</span>
+  <br />
+  <span>pokemons previous: {{ item_previous }}</span>
+  <br />
+  <span>pokemons next: {{ item_next }}</span>
+  <br />
+  <div class="row">
+    <div *ngFor="let data of item_results; let i = index" class="col-md-4">
+      <div class="card-deck">
+        <div class="card bg-primary">
+          <div class="card-body text-center">
+            <div>{{ i + 1 }}</div>
+            <div>
+              {{ data["name"] }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
