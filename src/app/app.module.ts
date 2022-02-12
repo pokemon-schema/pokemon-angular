@@ -10,20 +10,20 @@ import { HttpClientModule } from '@angular/common/http';
 //Modules Created
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { ItemComponent } from './item/item.component';
-import { CorePanelComponent } from './core-panel/core-panel.component';
 import { PokemonPageComponent } from './pokemon-page/pokemon-page.component';
 import { AbilityComponent } from './ability/ability.component';
 import { TypeComponent } from './type/type.component';
+import { HomePageComponent } from './page/home-page/home-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokemonComponent,
     ItemComponent,
-    CorePanelComponent,
     PokemonPageComponent,
     AbilityComponent,
     TypeComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,
