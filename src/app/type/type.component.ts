@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonService } from '../api/pokemon/pokemon.service';
+import { PokemonService } from '../service/poke-api/pokemon.service';
 
 @Component({
   selector: 'app-type',
@@ -21,7 +21,7 @@ export class TypeComponent implements OnInit {
       this.type_next = data.next;
       this.type_previous = data.previous;
       this.type_results = data.results;
-      
+
       console.log("TYPES");
       console.log(this.type_count);
       console.log(this.type_next);
@@ -30,5 +30,5 @@ export class TypeComponent implements OnInit {
     });
 
   }
-  
+
 }

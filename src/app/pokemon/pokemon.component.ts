@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonService } from '../api/pokemon/pokemon.service';
+import { PokemonService } from '../service/poke-api/pokemon.service';
 
 @Component({
   selector: 'app-pokemon',
@@ -28,9 +28,9 @@ export class PokemonComponent implements OnInit {
       console.log(this.pokemon_count);
       console.log(this.pokemon_next);
       console.log(this.pokemon_previous);
-      console.log(this.pokemon_results);      
+      console.log(this.pokemon_results);
     });
-    
+
   }
 }
 

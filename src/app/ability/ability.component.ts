@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonService } from '../api/pokemon/pokemon.service';
+import { PokemonService } from '../service/poke-api/pokemon.service';
 
 @Component({
   selector: 'app-ability',
@@ -22,7 +22,7 @@ export class AbilityComponent implements OnInit {
       this.ability_next = data.next;
       this.ability_previous = data.previous;
       this.ability_results = data.results;
-      
+
       console.log("ABILITY");
       console.log(this.ability_count);
       console.log(this.ability_next);
