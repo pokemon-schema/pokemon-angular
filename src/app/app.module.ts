@@ -14,6 +14,9 @@ import { PokemonPageComponent } from './page/pokemon-page/pokemon-page.component
 import { AbilityComponent } from './ability/ability.component';
 import { TypeComponent } from './type/type.component';
 import { HomePageComponent } from './page/home-page/home-page.component';
+import { ItemPageComponent } from './page/item-page/item-page.component';
+import { AbilityPageComponent } from './page/ability-page/ability-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,13 +27,18 @@ import { HomePageComponent } from './page/home-page/home-page.component';
     AbilityComponent,
     TypeComponent,
     HomePageComponent,
+    ItemPageComponent,
+    AbilityPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,14 @@
 <div class="app-root">
-  <h1>APP-ROOT (header)</h1>
+  <nav class="navbar fixed-top ">
+    <div class="col-md-12">
+      <button [routerLink]="'/'" class="btn btn-info"><h3>APP-ROOT (header)</h3></button>
+    </div>
+    <div class="col-md-12">
+      <button [routerLink]="'/'" class="btn btn-primary">HOME PAGE</button>
+      <button [routerLink]="'/pokemon-page'" class="btn btn-primary">POKEMON PAGE</button>
+      <button [routerLink]="'/item-page'" class="btn btn-primary">ITEM PAGE</button>
+      <button [routerLink]="'/ability-page'" class="btn btn-primary">ABILITY PAGE</button>
+    </div>
+  </nav>
 </div>
 <router-outlet></router-outlet>
