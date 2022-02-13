@@ -1,23 +1,25 @@
-<div class="app-pokemon mb-2">
-  <p>POKEMONS</p>
-  <span>pokemons count: {{ pokemon_count }}</span>
-  <br />
+<div class="app-pokemon">
+  <h1>POKEMONS</h1>
+  <span>total: {{ pokemon_count }}</span>
+  <!-- <br />
   <span>pokemons previous: {{ pokemon_previous }}</span>
   <br />
   <span>pokemons next: {{ pokemon_next }}</span>
-  <br />
-  <div class="row">
-    <div *ngFor="let data of pokemon_results; let i = index" class="col-md-3">
-      <div class="card-deck">
-        <div class="card bg-success">
-          <div class="card-body text-center">
-            <div>{{ i + 1 }}</div>
-            <div>
-              {{ data["name"] }}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <br /> -->
+
+  <table class="table table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let data of pokemon_results; let i = index" class="table-success">
+      <tr>
+        <th scope="row" style="width: 25px;">{{ i + 1 }}</th>
+        <td scope="row">{{ data["name"]}}</td>
+      </tr>
+    </tbody>
+  </table>
+
 </div>

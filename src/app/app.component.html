@@ -1,14 +1,20 @@
 <div class="app-root">
-  <nav class="navbar fixed-top ">
-    <div class="col-md-12">
-      <button [routerLink]="'/'" class="btn btn-info"><h3>APP-ROOT (header)</h3></button>
-    </div>
-    <div class="col-md-12">
-      <button [routerLink]="'/'" class="btn btn-primary">HOME PAGE</button>
-      <button [routerLink]="'/pokemon-page'" class="btn btn-primary">POKEMON PAGE</button>
-      <button [routerLink]="'/item-page'" class="btn btn-primary">ITEM PAGE</button>
-      <button [routerLink]="'/ability-page'" class="btn btn-primary">ABILITY PAGE</button>
-    </div>
-  </nav>
+  <div class="row m-0 bg-dark fixed-top">
+      <button class="btn btn-primary" style="height: 32px; width: 120px;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+        <♦Menu>
+      </button>
+  </div>
+  <div class="collapse collapse-horizontal bg-danger minH-100 fixed-top col-10 col-md-6 col-lg-4" style="position: absolute; margin-top: 32px;" id="collapseWidthExample">
+      <nav class="navbar m-0 p-0">
+          <button [routerLink]="'/'" class="btn btn-primary col-12">HOME PAGE</button>
+          <button [routerLink]="'/pokemon-page'" class="btn btn-primary col-12">POKEMON PAGE</button>
+          <button [routerLink]="'/item-page'" class="btn btn-primary col-12">ITEM PAGE</button>
+          <button [routerLink]="'/ability-page'" class="btn btn-primary col-12">ABILITY PAGE</button>
+      </nav>
+  </div>
+  <router-outlet></router-outlet>
+
+
+
 </div>
-<router-outlet></router-outlet>
+
