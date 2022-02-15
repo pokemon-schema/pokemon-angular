@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TypeComponent } from './type.component';
+import { TableAbilityComponent } from './tb_ability.component';
 
-describe('TypeComponent', () => {
-  let component: TypeComponent;
-  let fixture: ComponentFixture<TypeComponent>;
+describe('AbilityComponent', () => {
+  let component: TableAbilityComponent;
+  let fixture: ComponentFixture<TableAbilityComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TypeComponent ]
+      declarations: [ TableAbilityComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TypeComponent);
+    fixture = TestBed.createComponent(TableAbilityComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

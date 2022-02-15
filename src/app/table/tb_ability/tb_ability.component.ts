@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonService } from '../service/poke-api/pokemon.service';
+import { PokemonService } from '../../service/poke-api/pokemon.service';
 
 @Component({
   selector: 'app-ability',
-  templateUrl: './ability.component.html',
-  styleUrls: ['./ability.component.css']
+  templateUrl: './tb_ability.component.html',
+  styleUrls: ['./tb_ability.component.css']
 })
-export class AbilityComponent implements OnInit {
+export class TableAbilityComponent implements OnInit {
   constructor(private pokemonService: PokemonService) { }
 
   //ability

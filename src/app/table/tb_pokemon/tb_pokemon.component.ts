@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonService } from '../service/poke-api/pokemon.service';
+import { PokemonService } from '../../service/poke-api/pokemon.service';
 
 @Component({
   selector: 'app-pokemon',
-  templateUrl: './pokemon.component.html',
-  styleUrls: ['./pokemon.component.css']
+  templateUrl: './tb_pokemon.component.html',
+  styleUrls: ['./tb_pokemon.component.css']
 })
 
 export class PokemonComponent implements OnInit {
