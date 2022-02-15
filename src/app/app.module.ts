@@ -17,6 +17,7 @@ import { HomePageComponent } from './page/home-page/home-page.component';
 import { ItemPageComponent } from './page/item-page/item-page.component';
 import { AbilityPageComponent } from './page/ability-page/ability-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TypePageComponent } from './page/type-page/type-page.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomePageComponent,
     ItemPageComponent,
     AbilityPageComponent,
+    TypePageComponent,
   ],
   imports: [
     BrowserModule,

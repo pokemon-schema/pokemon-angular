@@ -1,17 +1,25 @@
 <div class="app-home-page">
   <p>home-page</p>
   <div class="row justify-content-center m-0">
-    <div class="col-sm-12 col-md-12">
-      <app-pokemon></app-pokemon>
+    <div class="col-sm-12 col-md-6 col-lg-3 bg-danger">
+      <h5>pokemon-page</h5>
+      <img src="assets/img/pokemonImg.png" style="width: 200px; height: 200px;">
+      <button [routerLink]="'/pokemon-page'" class="btn btn-success col-12">POKEMON PAGE -></button>
     </div>
-    <div class="cols-sm-12 col-md-4">
-      <app-item></app-item>
+    <div class="cols-sm-12 col-md-6 col-lg-3 bg-primary">
+      <h5>item-page</h5>
+      <img src="assets/img/itemImg.jpg" style="width: 200px; height: 200px;">
+      <button [routerLink]="'/item-page'" class="btn btn-success col-12">ITEM PAGE -></button>
     </div>
-    <div class="col-sm-12 col-md-4">
-      <app-ability></app-ability>
+    <div class="col-sm-12 col-md-6 col-lg-3 bg-danger">
+      <h5>ability-page</h5>
+      <img src="assets/img/abilityImg.png" style="width: 200px; height: 200px;">
+      <button [routerLink]="'/ability-page'" class="btn btn-success col-12">ABILITY PAGE -></button>
     </div>
-    <div class="col-sm-12 col-md-4">
-      <app-type></app-type>
+    <div class="col-sm-12 col-md-6 col-lg-3 bg-primary">
+      <h5>type-page</h5>
+      <img src="assets/img/typeImg.png" style="width: 200px; height: 200px;">
+      <button [routerLink]="'/type-page'" class="btn btn-success col-12">TYPE PAGE -></button>
     </div>
   </div>
 </div>
