@@ -15,15 +15,40 @@
         <th scope="col"></th>
       </tr>
     </thead>
-    <tbody *ngFor="let data of pokemon_results; let i = index" class="table-success">
+    <tbody
+      *ngFor="let data of pokemon_results; let i = index"
+      class="table-success"
+    >
       <tr>
-        <th scope="row" style="width: 25px;">{{ i + 1 }}</th>
-        <td scope="row">{{ data["name"]}}</td>
-        <td scope="row" style="width: 100px;">
+        <th scope="row" style="width: 25px">{{ i + 1 }}</th>
+        <td scope="row">{{ data["name"] }}</td>
+        <td scope="row" style="width: 100px">
           <button class="btn btn-dark">-></button>
         </td>
       </tr>
     </tbody>
   </table>
 
+  <!-- amyszko - monkey shit -->
+  <!-- <table class="table table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody
+      *ngFor="let api_data of api_pokemon_results; let i = index"
+      class="table-success"
+    >
+      <tr>
+        <th scope="row" style="width: 25px">{{ i + 1 }}</th>
+        <td scope="row">{{ api_data["name"] }}</td>
+        <td scope="row" style="width: 100px">
+          <button class="btn btn-dark">-></button>
+        </td>
+      </tr>
+    </tbody>
+  </table> -->
 </div>

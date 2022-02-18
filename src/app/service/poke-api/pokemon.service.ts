@@ -9,7 +9,6 @@ export class PokemonService {
   constructor(private httpClient: HttpClient) { }
 
   public getPokemon() {
-    //return this.httpClient.get('https://pokeapi.co/api/v2/pokemon?limit=1118');
     return this.httpClient.get('https://pokeapi.co/api/v2/pokemon');
   }
   public getType() {
@@ -21,5 +20,10 @@ export class PokemonService {
   public getItem() {
     return this.httpClient.get('https://pokeapi.co/api/v2/item');
   }
+
+  // public getAllPokemons() {
+  //   return this.httpClient.get('http://localhost:8080/pokemons');
+  // }
+
 
 }
