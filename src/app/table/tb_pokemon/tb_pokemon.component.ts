@@ -14,23 +14,15 @@ export class PokemonComponent implements OnInit {
   title = "asdasd";
   pokemon: any;
 
-  // fetchDataFromServer() {
-  //   this.pokemon = this.pokemonService.getAllPokemons();
-  // }
-
   //pokemon
   pokemon_count!: number;
   pokemon_next!: string;
   pokemon_previous!: string;
   pokemon_results!: [];
-
-  //amyszko - on construction.. monkey shit 
-  api_pokemon_count!: number;
-  api_pokemon_next!: string;
-  api_pokemon_previous!: string;
-  api_pokemon_results!: [];
+  pokemon_img!: string;
 
   ngOnInit() {
+    //pokemon-list (pager)
     this.pokemonService.getPokemonList().subscribe((data: any) => {
 
       this.pokemon_count = data.count;
@@ -44,6 +36,9 @@ export class PokemonComponent implements OnInit {
       console.log(this.pokemon_previous);
       console.log(this.pokemon_results);
     });
+    
+    //pokemon-sprite (img)
+    this.pokemon_img = this.pokemonService.getPokemonImg();
 
   }
 }

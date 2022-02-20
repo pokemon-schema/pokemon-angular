@@ -11,33 +11,43 @@ export class PokemonService {
   offset!: number;
   limit!: number;
   id!: number;
+  url!: string;
 
   //pokemon-list (pager)
   public getPokemonList() {
     this.offset = 0;
     this.limit = 5;
-    return this.httpClient.get('https://pokeapi.co/api/v2/pokemon/?offset='+ this.offset +'&limit='+ this.limit);
+    this.url = `https://pokeapi.co/api/v2/pokemon/?offset=${this.offset}&limit=${this.limit}`;
+    return this.httpClient.get(this.url);
   }
   //pokemon-info (id)
   public getPokemonInfo() {
     this.id = 1;
-    return this.httpClient.get('https://pokeapi.co/api/v2/pokemon/' + this.id);
+    this.url = `https://pokeapi.co/api/v2/pokemon/${this.id}`;
+    return this.httpClient.get(this.url);
   }
   
   //pokemon-sprite-utl (img)
   public getPokemonImg() {
     this.id = 1;
-    return this.httpClient.get('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+ this.id +'.png');
+    this.url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.id}.png`;
+    return this.url;
   }
 
   //type-list (pager)
   public getType() {
-    return this.httpClient.get('https://pokeapi.co/api/v2/type/?offset='+ this.offset +'&limit='+ this.limit);
+    this.offset = 0;
+    this.limit = 5;
+    this.url = `https://pokeapi.co/api/v2/type/?offset=${this.offset}&limit=${this.limit}`;
+    return this.httpClient.get(this.url);
   }
 
   //ability-list (pager)
   public getAbility() {
-    return this.httpClient.get('https://pokeapi.co/api/v2/ability/?offset='+ this.offset +'&limit='+ this.limit);
+    this.offset = 0;
+    this.limit = 5;
+    this.url = `https://pokeapi.co/api/v2/ability/?offset=${this.offset}&limit=${this.limit}`;
+    return this.httpClient.get(this.url);
   }
 
 }

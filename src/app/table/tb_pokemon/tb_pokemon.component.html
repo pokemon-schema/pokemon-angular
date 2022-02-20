@@ -2,6 +2,7 @@
   <div class="card border-secondary m-auto" style="max-width: 800px">
     <h1>POKEMONS</h1>
     <span>total: {{ pokemon_count }}</span>
+    <span>sprite_default: {{ pokemon_img }}</span>
     <div class="input-group">
       <span
         class="input-group-text bg-dark"
@@ -33,7 +34,16 @@
         >
           <tr>
             <th scope="row" style="width: 25px">{{ i + 1 }}</th>
-            <td scope="row" style="width: 40px">{{ data["name"] }}</td>
+            <td scope="row" style="width: 40px">
+              <img
+                *ngIf="pokemon_img"
+                [src]="pokemon_img"
+                alt="pokemon_sprite"
+                width="96"
+                height="96"
+                noresize="noresize"
+              />
+            </td>
             <td scope="row">{{ data["name"] }}</td>
             <td scope="row" style="width: 100px">
               <button class="btn btn-dark">-></button>
