@@ -37,7 +37,7 @@
             <td scope="row" style="width: 40px">
               <img
                 *ngIf="pokemon_img"
-                [src]="pokemon_img"
+                [src]="pokemon_img + (i + 1) + '.png'"
                 alt="pokemon_sprite"
                 width="96"
                 height="96"
