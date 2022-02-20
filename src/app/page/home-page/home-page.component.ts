@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 
   template: `
   <img src="assets/img/abilityImg.png">
-  <img src="assets/img/itemImg.jpg">
   <img src="assets/img/pokemonImg.png">
   <img src="assets/img/typeImg.png">
   `

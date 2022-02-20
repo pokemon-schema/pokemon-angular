@@ -1,54 +1,52 @@
 <div class="app-pokemon">
-  <h1>POKEMONS</h1>
-  <span>total: {{ pokemon_count }}</span>
-  <!-- <br />
-  <span>pokemons previous: {{ pokemon_previous }}</span>
-  <br />
-  <span>pokemons next: {{ pokemon_next }}</span>
-  <br /> -->
-
-  <table class="table table-striped">
-    <thead class="table-dark">
-      <tr>
-        <th scope="col">id</th>
-        <th scope="col">name</th>
-        <th scope="col"></th>
-      </tr>
-    </thead>
-    <tbody
-      *ngFor="let data of pokemon_results; let i = index"
-      class="table-success"
-    >
-      <tr>
-        <th scope="row" style="width: 25px">{{ i + 1 }}</th>
-        <td scope="row">{{ data["name"] }}</td>
-        <td scope="row" style="width: 100px">
-          <button class="btn btn-dark">-></button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
-  <!-- amyszko - monkey shit -->
-  <!-- <table class="table table-striped">
-    <thead class="table-dark">
-      <tr>
-        <th scope="col">id</th>
-        <th scope="col">name</th>
-        <th scope="col"></th>
-      </tr>
-    </thead>
-    <tbody
-      *ngFor="let api_data of api_pokemon_results; let i = index"
-      class="table-success"
-    >
-      <tr>
-        <th scope="row" style="width: 25px">{{ i + 1 }}</th>
-        <td scope="row">{{ api_data["name"] }}</td>
-        <td scope="row" style="width: 100px">
-          <button class="btn btn-dark">-></button>
-        </td>
-      </tr>
-    </tbody>
-  </table> -->
+  <div class="card border-secondary m-auto" style="max-width: 800px">
+    <h1>POKEMONS</h1>
+    <span>total: {{ pokemon_count }}</span>
+    <div class="input-group">
+      <span
+        class="input-group-text bg-dark"
+        id="basic-addon1"
+        style="color: azure"
+        >pokemon</span
+      >
+      <input
+        type="text"
+        class="form-control"
+        placeholder="insert name or id"
+        aria-label="Pokemon"
+        aria-describedby="basic-addon1"
+      />
+    </div>
+    <div class="card-body text-secondary p-0">
+      <table class="table table-striped m-0">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col"></th>
+            <th scope="col">name</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody
+          *ngFor="let data of pokemon_results; let i = index"
+          class="table-success"
+        >
+          <tr>
+            <th scope="row" style="width: 25px">{{ i + 1 }}</th>
+            <td scope="row" style="width: 40px">{{ data["name"] }}</td>
+            <td scope="row">{{ data["name"] }}</td>
+            <td scope="row" style="width: 100px">
+              <button class="btn btn-dark">-></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-dark col-sm-8 col-md-3 col-lg-2 float-end">
+        next
+      </button>
+      <button class="btn btn-dark col-sm-8 col-md-3 col-lg-2 float-end">
+        previous
+      </button>
+    </div>
+  </div>
 </div>
