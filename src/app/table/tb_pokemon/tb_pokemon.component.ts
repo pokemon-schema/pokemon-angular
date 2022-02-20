@@ -31,7 +31,7 @@ export class PokemonComponent implements OnInit {
   api_pokemon_results!: [];
 
   ngOnInit() {
-    this.pokemonService.getPokemon().subscribe((data: any) => {
+    this.pokemonService.getPokemonList().subscribe((data: any) => {
 
       this.pokemon_count = data.count;
       this.pokemon_next = data.next;
@@ -44,21 +44,6 @@ export class PokemonComponent implements OnInit {
       console.log(this.pokemon_previous);
       console.log(this.pokemon_results);
     });
-
-    // //amyszko - on construction.. monkey shit
-    // this.pokemonService.getAllPokemons().subscribe((data: any) => {
-
-    //   this.api_pokemon_count = data.count;
-    //   this.api_pokemon_next = data.next;
-    //   this.api_pokemon_previous = data.previous;
-    //   this.api_pokemon_results = data.results;
-
-    //   console.log("POKEMON");
-    //   console.log(this.api_pokemon_count);
-    //   console.log(this.api_pokemon_next);
-    //   console.log(this.api_pokemon_previous);
-    //   console.log(this.api_pokemon_results);
-    // });
 
   }
 }
