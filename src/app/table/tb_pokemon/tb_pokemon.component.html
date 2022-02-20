@@ -1,62 +1,49 @@
 <div class="app-pokemon">
-  <div class="card border-secondary m-auto" style="max-width: 800px">
-    <h1>POKEMONS</h1>
-    <span>total: {{ pokemon_count }}</span>
-    <span>sprite_default: {{ pokemon_img }}</span>
-    <div class="input-group">
-      <span
-        class="input-group-text bg-dark"
-        id="basic-addon1"
-        style="color: azure"
-        >pokemon</span
-      >
-      <input
-        type="text"
-        class="form-control"
-        placeholder="insert name or id"
-        aria-label="Pokemon"
-        aria-describedby="basic-addon1"
-      />
+  <div class="card m-auto mt-3 mb-3 bg-transparent" style="max-width: 800px">
+    <div class="bg-dark text-light opacity-80">
+      <div class="m-auto mt-3 mb-3 col-md-11">
+        <h1>POKEMONS</h1>
+        <h3>total: {{ pokemon_count }}</h3>
+        <div class="input-group">
+          <span
+            class="input-group-text bg-dark"
+            id="basic-addon1"
+            style="color: #ffffff"
+            >search</span
+          >
+          <input
+            type="text"
+            class="form-control"
+            placeholder="insert name or id"
+            aria-label="Pokemon"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+      </div>
+      <!-- <button class="btn btn-dark col-sm-8 col-md-3 col-lg-2">next</button>
+      <button class="btn btn-dark col-sm-8 col-md-3 col-lg-2">previous</button> -->
     </div>
-    <div class="card-body text-secondary p-0">
-      <table class="table table-striped m-0">
-        <thead class="table-dark">
-          <tr>
-            <th scope="col">id</th>
-            <th scope="col"></th>
-            <th scope="col">name</th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody
+    <div class="container">
+      <div class="row">
+        <button
+          class="black-btn col-md-4"
           *ngFor="let data of pokemon_results; let i = index"
-          class="table-success"
         >
-          <tr>
-            <th scope="row" style="width: 25px">{{ i + 1 }}</th>
-            <td scope="row" style="width: 40px">
-              <img
-                *ngIf="pokemon_img"
-                [src]="pokemon_img + (i + 1) + '.png'"
-                alt="pokemon_sprite"
-                width="96"
-                height="96"
-                noresize="noresize"
-              />
-            </td>
-            <td scope="row">{{ data["name"] }}</td>
-            <td scope="row" style="width: 100px">
-              <button class="btn btn-dark">-></button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <button class="btn btn-dark col-sm-8 col-md-3 col-lg-2 float-end">
-        next
-      </button>
-      <button class="btn btn-dark col-sm-8 col-md-3 col-lg-2 float-end">
-        previous
-      </button>
+          <div>
+            <img
+              *ngIf="pokemon_img"
+              [src]="pokemon_img + (i + 1) + '.png'"
+              alt="pokemon_sprite"
+              width="96"
+              height="96"
+              noresize="noresize"
+            />
+          </div>
+          <div class="bold">{{ i + 1 }}</div>
+          <div>{{ data["name"] }}</div>
+        </button>
+      </div>
     </div>
+    <div class="row float-end"></div>
   </div>
 </div>

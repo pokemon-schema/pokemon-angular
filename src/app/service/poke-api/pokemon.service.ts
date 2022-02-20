@@ -16,7 +16,7 @@ export class PokemonService {
   //pokemon-list (pager)
   public getPokemonList() {
     this.offset = 0;
-    this.limit = 898;
+    this.limit = 898; //898
     this.url = `https://pokeapi.co/api/v2/pokemon/?offset=${this.offset}&limit=${this.limit}`;
     return this.httpClient.get(this.url);
   }
@@ -30,7 +30,7 @@ export class PokemonService {
   //pokemon-sprite-utl (img)
   public getPokemonImg() {
     this.id = 1;
-    this.url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/`; //${this.id}.png
+    this.url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/`; // ${this.id}.png
     return this.url;
   }
 
