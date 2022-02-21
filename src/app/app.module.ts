@@ -16,6 +16,7 @@ import { HomePageComponent } from './page/home-page/home-page.component';
 import { AbilityPageComponent } from './page/ability-page/ability-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TypePageComponent } from './page/type-page/type-page.component';
+import { PokemonSearchPipe } from './pipe/pokemon-search.pipe';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { TypePageComponent } from './page/type-page/type-page.component';
     HomePageComponent,
     AbilityPageComponent,
     TypePageComponent,
+    PokemonSearchPipe,
   ],
   imports: [
     BrowserModule,
