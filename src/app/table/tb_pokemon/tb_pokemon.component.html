@@ -11,7 +11,10 @@
             style="color: #ffffff"
             >search</span
           >
+          <!-- [(ngModel)] -->
           <input
+            [(ngModel)]="pokemon_results"
+            #ctrlName="ngModel"
             type="text"
             class="form-control"
             placeholder="insert name or id"
@@ -41,6 +44,7 @@
           </div>
           <div class="bold">{{ i + 1 }}</div>
           <div>{{ data["name"] }}</div>
+          <div>{{ pokemon_count }}</div>
         </button>
       </div>
     </div>

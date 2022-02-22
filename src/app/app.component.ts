@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -8,3 +10,23 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'pokemon';
 }
+@NgModule({
+  declarations: [
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { 
+  name: string = 'Hardik';
+  
+  setValueName() { 
+    this.name = 'Savani'; 
+   }
+
+ }

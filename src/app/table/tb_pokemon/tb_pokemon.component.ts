@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { PokemonService } from '../../service/poke-api/pokemon.service';
 //import { Observable } from 'rxjs';
 //import 'rxjs/add/aperator/map';
@@ -41,5 +43,21 @@ export class PokemonComponent implements OnInit {
     this.pokemon_img = this.pokemonService.getPokemonImg();
 
   }
+}
+
+@NgModule({
+  declarations: [
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule
+  ],
+})
+export class AppModule {
+  pokemon_count!: number;
+  pokemon_next!: string;
+  pokemon_previous!: string;
+  pokemon_results!: [];
+  pokemon_img!: string;
 }
 
