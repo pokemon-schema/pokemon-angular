@@ -17,22 +17,27 @@ export class PokemonComponent implements OnInit {
   pokemon: any;
 
   //pokemon
+  data!: [];
   pokemon_count!: number;
   pokemon_next!: string;
   pokemon_previous!: string;
   pokemon_results!: [];
+
   pokemon_img!: string;
 
   ngOnInit() {
     //pokemon-list (pager)
     this.pokemonService.getPokemonList().subscribe((data: any) => {
 
+
+      this.data = data;
       this.pokemon_count = data.count;
       this.pokemon_next = data.next;
       this.pokemon_previous = data.previous;
       this.pokemon_results = data.results;
-
+      
       console.log("POKEMON");
+      console.log(this.data);
       console.log(this.pokemon_count);
       console.log(this.pokemon_next);
       console.log(this.pokemon_previous);
@@ -41,7 +46,6 @@ export class PokemonComponent implements OnInit {
     
     //pokemon-sprite (img)
     this.pokemon_img = this.pokemonService.getPokemonImg();
-
   }
 }
 
