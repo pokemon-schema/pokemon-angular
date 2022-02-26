@@ -7,9 +7,10 @@
       <h1>ABILITIES</h1>
       <span>total: {{ ability_count }}</span>
       <div class="input-group">
-        <span class="input-group-text bg-dark text-light" id="basic-addon1"
-          >search</span
-        >
+        <span class="input-group-text bg-dark text-light" id="basic-addon1">
+          <!-- search -->
+          <mat-icon>search</mat-icon>
+        </span>
         <input
           type="text"
           class="form-control"
@@ -38,17 +39,21 @@
             <th scope="row" style="width: 25px">{{ i + 1 }}</th>
             <td scope="row" style="width: 40px"></td>
             <td scope="row">{{ data["name"] }}</td>
-            <td scope="row" style="width: 100px">
-              <button class="btn btn-dark">-></button>
+            <td scope="row" style="width: 50px">
+              <button class="btn btn-dark">
+                <mat-icon>arrow_forward</mat-icon>
+              </button>
             </td>
           </tr>
         </tbody>
       </table>
       <button class="btn btn-dark col-sm-8 col-md-3 col-lg-2 float-end">
-        next
+        <!-- next -->
+        <mat-icon>arrow_forward_ios</mat-icon>
       </button>
       <button class="btn btn-dark col-sm-8 col-md-3 col-lg-2 float-end">
-        previous
+        <!-- previous -->
+        <mat-icon>arrow_back_ios</mat-icon>
       </button>
     </div>
   </div>

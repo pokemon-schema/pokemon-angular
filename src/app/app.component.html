@@ -3,7 +3,7 @@
     <div class="col-12 col-md-12 col-lg-12">
       <button
         class="btn btn-success col-sm-12 p-0"
-        style="width: 100px"
+        style="width: 70px"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#menuCollapse"
@@ -16,7 +16,8 @@
           alt="pokeLogo"
           style="width: 32px; height: 32px"
         />
-        Menu
+        <!-- MENU -->
+        <mat-icon>menu</mat-icon>
       </button>
     </div>
     <!-- MENU COLLAPSE -->
@@ -30,7 +31,8 @@
           class="btn btn-dark col-12"
           style="background-color: rgb(60, 66, 69)"
         >
-          >HOME PAGE
+          <mat-icon>home</mat-icon>
+          HOME PAGE
         </button>
         <button
           class="btn btn-success col-12"
@@ -40,7 +42,13 @@
           aria-expanded="false"
           aria-controls="pokemonCollapse"
         >
-          \/ POKEMON \/
+          <!-- <img
+            src="assets/img/pokemon.png"
+            alt="pokeLogo"
+            style="width: 32px; height: 32px"
+          /> -->
+          <mat-icon>arrow_drop_down_circle</mat-icon>
+          POKEMON
         </button>
         <!-- MENU COLLAPSE -->
         <div
@@ -53,21 +61,21 @@
               class="btn btn-dark col-12"
               style="background-color: rgb(60, 66, 69)"
             >
-              >POKEMON PAGE
+              POKEMON PAGE
             </button>
             <button
               [routerLink]="'/ability-page'"
               class="btn btn-dark col-12"
               style="background-color: rgb(60, 66, 69)"
             >
-              >ABILITY PAGE
+              ABILITY PAGE
             </button>
             <button
               [routerLink]="'/type-page'"
               class="btn btn-dark col-12"
               style="background-color: rgb(60, 66, 69)"
             >
-              >TYPE PAGE
+              TYPE PAGE
             </button>
           </nav>
         </div>
