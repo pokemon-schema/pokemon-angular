@@ -1,6 +1,6 @@
 <div class="app-pokemon">
-  <div class="card m-auto mt-3 mb-3 bg-transparent" style="max-width: 800px">
-    <div class="bg-dark text-light opacity-80">
+  <div class="card m-auto mt-4 mb-3 bg-transparent" style="max-width: 800px">
+    <div class="bg-dark text-light opacity-80 rounded-top">
       <div class="m-auto mt-3 mb-3 col-md-11">
         <h1>POKEMONS</h1>
         <h3>total: {{ pokemon_count }}</h3>
@@ -35,6 +35,8 @@
           "
         >
           <div>
+            <div class="bold">{{ i + 1 }}</div>
+            <div>{{ data["name"] }}</div>
             <img
               *ngIf="pokemon_img"
               [src]="pokemon_img + (i + 1) + '.png'"
@@ -44,9 +46,6 @@
               noresize="noresize"
             />
           </div>
-          <div class="bold">{{ data.id }}</div>
-          <div>{{ data["name"] }}</div>
-          <div>{{ pokemon_count }}</div>
         </button>
       </div>
     </div>

@@ -2,24 +2,33 @@
   <div class="row m-0 bg-dark sticky-top">
     <div class="col-12 col-md-12 col-lg-12">
       <button
-        class="btn btn-success col-sm-12"
-        style="height: 32px; width: 120px"
+        class="btn btn-success col-sm-12 p-0"
+        style="width: 100px"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#menuCollapse"
         aria-expanded="false"
         aria-controls="menuCollapse"
       >
+        <img
+          src="assets/img/pokemon.png"
+          alt="pokeLogo"
+          style="width: 32px; height: 32px"
+        />
         Menu
       </button>
     </div>
     <!-- MENU COLLAPSE -->
     <div
       id="menuCollapse"
-      class="collapse collapse-vertical col-12 col-md-12 col-lg-12"
+      class="collapse collapse-vertical col-12 col-md-12 col-lg-12 p-0"
     >
       <nav class="navbar mt-0 p-0">
-        <button [routerLink]="'/'" class="btn btn-primary col-12">
+        <button
+          [routerLink]="'/'"
+          class="btn btn-dark col-12"
+          style="background-color: rgb(60, 66, 69)"
+        >
           >HOME PAGE
         </button>
         <button
@@ -32,23 +41,35 @@
         >
           \/ POKEMON \/
         </button>
-      </nav>
-    </div>
-    <!-- MENU COLLAPSE -->
-    <div
-      id="pokemonCollapse"
-      class="collapse collapse-vertical col-12 col-md-12 col-lg-12"
-    >
-      <nav class="navbar mt-0 p-0">
-        <button [routerLink]="'/pokemon-page'" class="btn btn-primary col-12">
-          >POKEMON PAGE
-        </button>
-        <button [routerLink]="'/ability-page'" class="btn btn-primary col-12">
-          >ABILITY PAGE
-        </button>
-        <button [routerLink]="'/type-page'" class="btn btn-primary col-12">
-          >TYPE PAGE
-        </button>
+        <!-- MENU COLLAPSE -->
+        <div
+          id="pokemonCollapse"
+          class="collapse collapse-vertical col-12 col-md-12 col-lg-12"
+        >
+          <nav class="navbar mt-0 p-0">
+            <button
+              [routerLink]="'/pokemon-page'"
+              class="btn btn-dark col-12"
+              style="background-color: rgb(60, 66, 69)"
+            >
+              >POKEMON PAGE
+            </button>
+            <button
+              [routerLink]="'/ability-page'"
+              class="btn btn-dark col-12"
+              style="background-color: rgb(60, 66, 69)"
+            >
+              >ABILITY PAGE
+            </button>
+            <button
+              [routerLink]="'/type-page'"
+              class="btn btn-dark col-12"
+              style="background-color: rgb(60, 66, 69)"
+            >
+              >TYPE PAGE
+            </button>
+          </nav>
+        </div>
       </nav>
     </div>
   </div>

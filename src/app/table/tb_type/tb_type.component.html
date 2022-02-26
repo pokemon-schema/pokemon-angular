@@ -1,22 +1,25 @@
 <div class="app-type">
-  <div class="card border-secondary m-auto" style="max-width: 800px">
-    <h1>TYPES</h1>
-    <span>total: {{ type_count }}</span>
-    <div class="input-group">
-      <span
-        class="input-group-text bg-dark"
-        id="basic-addon1"
-        style="color: azure"
-        >type</span
-      >
-      <input
-        type="text"
-        class="form-control"
-        placeholder="insert name or id"
-        aria-label="Type"
-        aria-describedby="basic-addon1"
-      />
+  <div
+    class="card border-secondary m-auto mt-4 bg-dark text-light"
+    style="max-width: 800px"
+  >
+    <div class="m-auto mt-3 mb-3 col-md-11">
+      <h1>TYPES</h1>
+      <span>total: {{ type_count }}</span>
+      <div class="input-group">
+        <span class="input-group-text bg-dark text-light" id="basic-addon1"
+          >search</span
+        >
+        <input
+          type="text"
+          class="form-control"
+          placeholder="insert name or id"
+          aria-label="Type"
+          aria-describedby="basic-addon1"
+        />
+      </div>
     </div>
+
     <div class="card-body text-secondary p-0">
       <table class="table table-striped m-0">
         <thead class="table-dark">
@@ -33,7 +36,7 @@
         >
           <tr>
             <th scope="row" style="width: 25px">{{ i + 1 }}</th>
-            <td scope="row" style="width: 40px">{{ data["name"] }}</td>
+            <td scope="row" style="width: 40px"></td>
             <td scope="row">{{ data["name"] }}</td>
             <td scope="row" style="width: 100px">
               <button class="btn btn-dark">-></button>
