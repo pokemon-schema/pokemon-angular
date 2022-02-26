@@ -5,6 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+//Icons
+import {MatIconModule} from '@angular/material/icon';
+
 //Http
 import { HttpClientModule } from '@angular/common/http';
 
@@ -36,7 +39,8 @@ import { PokemonSearchPipe } from './pipe/pokemon-search.pipe';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatIconModule
   ],
   providers: [
 
