@@ -14,7 +14,7 @@ export class PokemonService {
   url!: string;
 
   //pokemon-list (pager)
-  public getPokemonList() {
+  public getPokemonList() { //offset: number, limit: number
     this.offset = 0;
     this.limit = 898; //898
     this.url = `https://pokeapi.co/api/v2/pokemon/?offset=${this.offset}&limit=${this.limit}`;

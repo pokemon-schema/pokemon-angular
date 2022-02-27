@@ -10,6 +10,12 @@ export class TypeComponent implements OnInit {
 
   constructor(private pokemonService: PokemonService) { }
 
+  //created
+  type_id!: number;
+  type_name!: string;
+  type_url!: string;
+
+  //api
   type_count!: number;
   type_next!: string;
   type_previous!: string;
@@ -31,4 +37,28 @@ export class TypeComponent implements OnInit {
 
   }
 
+  goTypeInfoPageClick(index: number, data: any) {
+    this.type_id = index + 1;
+    this.type_name = data["name"];
+    this.type_url = data["url"];
+    console.log(
+      `btn-type-info clicked! 
+      type_id: ${this.type_id}
+      type_name: ${this.type_name}
+      type_name: ${this.type_url}
+      `
+    );
+    // alert("hello");
+  }
+
+  goNextPageClick(index: number) {
+    this.type_id = index + 1;
+    console.log(
+      `btn-type-info clicked! 
+      type_id: ${this.type_id}
+      `
+    );
+  }
+
 }
+
