@@ -32,7 +32,11 @@
           </tr>
         </thead>
         <tbody
-          *ngFor="let data of type_results | slice: 0:6; let index = index"
+          *ngFor="
+            let index = index;
+            let data;
+            of: type_results | slice: offset:limit
+          "
           class="table-success"
         >
           <tr>
@@ -52,12 +56,15 @@
       </table>
       <button
         class="btn btn-dark col-sm-8 col-md-3 col-lg-2 float-end"
-        (click)="goNextPageClick(1)"
+        (click)="goNextPageClick(offset, limit)"
       >
         <!-- next -->
         <mat-icon>arrow_forward_ios</mat-icon>
       </button>
-      <button class="btn btn-dark col-sm-8 col-md-3 col-lg-2 float-end">
+      <button
+        class="btn btn-dark col-sm-8 col-md-3 col-lg-2 float-end"
+        (click)="goPreviousPageClick(offset, limit)"
+      >
         <!-- previous -->
         <mat-icon>arrow_back_ios</mat-icon>
       </button>

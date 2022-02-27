@@ -21,8 +21,15 @@ export class TypeComponent implements OnInit {
   type_previous!: string;
   type_results!: [];
 
+  //slicer
+  offset!: number;
+  limit!: number;
+
   ngOnInit() {
-    this.pokemonService.getType().subscribe((data: any) => {
+    this.pokemonService.getType(this.offset, this.limit).subscribe((data: any) => {
+      this.offset = 0;
+      this.limit = 6;
+
       this.type_count = data.count;
       this.type_next = data.next;
       this.type_previous = data.previous;
@@ -51,14 +58,33 @@ export class TypeComponent implements OnInit {
     // alert("hello");
   }
 
-  goNextPageClick(index: number) {
-    this.type_id = index + 1;
-    console.log(
-      `btn-type-info clicked! 
-      type_id: ${this.type_id}
-      `
-    );
+  goNextPageClick(offset: number, limit: number) {
+    if (limit <= this.type_count) {
+      
+      this.offset = offset + 6;
+      this.limit = limit + 6;
+      console.log(
+        `btn-page-next clicked! 
+        type_id: ${this.offset}
+        type_id: ${this.limit}
+        `
+      );
+    }
   }
+
+  goPreviousPageClick(offset: number, limit: number) {
+    if (offset > 0) {
+      this.offset = offset - 6;
+      this.limit = limit - 6;
+      console.log(
+        `btn-page-previous clicked! 
+        type_id: ${this.offset}
+        type_id: ${this.limit}
+        `
+      );
+    }
+  }
+
 
 }
 

@@ -35,9 +35,9 @@ export class PokemonService {
   }
 
   //type-list (pager)
-  public getType() {
-    this.offset = 0;
-    this.limit = 999;
+  public getType(offset: number, limit: number) {
+    this.offset = offset;
+    this.limit = limit;
     this.url = `https://pokeapi.co/api/v2/type/?offset=${this.offset}&limit=${this.limit}`;
     return this.httpClient.get(this.url);
   }
