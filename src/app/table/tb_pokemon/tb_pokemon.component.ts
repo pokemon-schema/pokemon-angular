@@ -13,22 +13,31 @@ import { PokemonService } from '../../service/poke-api/pokemon.service';
 
 export class PokemonComponent implements OnInit {
   constructor(private pokemonService: PokemonService) { }
-  title = "asdasd";
-  pokemon: any;
 
-  //pokemon
+  //created
+  pokemon_id!: number;
+  pokemon_name!: string;
+  pokemon_url!: string;
+
+  //api
   data!: [];
   pokemon_count!: number;
   pokemon_next!: string;
   pokemon_previous!: string;
   pokemon_results!: [];
 
+  //sprite
   pokemon_img!: string;
+
+  //slicer
+  offset!: number;
+  limit!: number;
 
   ngOnInit() {
     //pokemon-list (pager)
     this.pokemonService.getPokemonList().subscribe((data: any) => {
-
+      this.offset = 0;
+      this.limit = 12;
 
       this.data = data;
       this.pokemon_count = data.count;
@@ -47,6 +56,50 @@ export class PokemonComponent implements OnInit {
     //pokemon-sprite (img)
     this.pokemon_img = this.pokemonService.getPokemonImg();
   }
+
+  goPokemonInfoPageClick(index: number, data: any) {
+    this.pokemon_id = index + 1;
+    this.pokemon_name = data["name"];
+    this.pokemon_url = data["url"];
+    console.log(
+      `btn-pokemon-info clicked! 
+      pokemon_id: ${this.pokemon_id}
+      pokemon_name: ${this.pokemon_name}
+      pokemon_name: ${this.pokemon_url}
+      `
+    );
+    // alert("hello");
+  }
+
+  goNextPageClick(offset: number, limit: number) {
+    if (limit <= 898) { //this.pokemon_count
+      
+      this.offset = offset + 12;
+      this.limit = limit + 12;
+      console.log(
+        `btn-page-next clicked! 
+        pokemon_id: ${this.offset}
+        pokemon_id: ${this.limit}
+        `
+      );
+    }
+  }
+
+  goPreviousPageClick(offset: number, limit: number) {
+    if (offset > 0) {
+      this.offset = offset - 12;
+      this.limit = limit - 12;
+      console.log(
+        `btn-page-previous clicked! 
+        pokemon_id: ${this.offset}
+        pokemon_id: ${this.limit}
+        `
+      );
+    }
+  }
+
+
+
 }
 
 @NgModule({
