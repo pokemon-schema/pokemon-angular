@@ -32,15 +32,23 @@
           </tr>
         </thead>
         <tbody
-          *ngFor="let data of ability_results | slice: 0:6; let i = index"
+          *ngFor="
+            let index = index;
+            let data;
+            of: ability_results | slice: offset:limit;
+            let i = index
+          "
           class="table-success"
         >
           <tr>
-            <th scope="row" style="width: 25px">{{ i + 1 }}</th>
+            <th scope="row" style="width: 25px">{{ offset + index + 1 }}</th>
             <td scope="row" style="width: 40px"></td>
             <td scope="row">{{ data["name"] }}</td>
             <td scope="row" style="width: 50px">
-              <button class="btn btn-dark">
+              <button
+                class="btn btn-dark"
+                (click)="goAbilityInfoPageClick(index, data)"
+              >
                 <!--(click)="goAbilityInfoPageClick()-->
                 <mat-icon>arrow_forward</mat-icon>
               </button>
@@ -48,11 +56,17 @@
           </tr>
         </tbody>
       </table>
-      <button class="btn btn-dark col-sm-8 col-md-3 col-lg-2 float-end">
+      <button
+        class="btn btn-dark col-sm-8 col-md-3 col-lg-2 float-end"
+        (click)="goNextPageClick(offset, limit)"
+      >
         <!-- next -->
         <mat-icon>arrow_forward_ios</mat-icon>
       </button>
-      <button class="btn btn-dark col-sm-8 col-md-3 col-lg-2 float-end">
+      <button
+        class="btn btn-dark col-sm-8 col-md-3 col-lg-2 float-end"
+        (click)="goPreviousPageClick(offset, limit)"
+      >
         <!-- previous -->
         <mat-icon>arrow_back_ios</mat-icon>
       </button>

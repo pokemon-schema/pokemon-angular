@@ -7,7 +7,6 @@ import { PokemonService } from '../../service/poke-api/pokemon.service';
   styleUrls: ['./tb_type.component.css']
 })
 export class TypeComponent implements OnInit {
-
   constructor(private pokemonService: PokemonService) { }
 
   //created
