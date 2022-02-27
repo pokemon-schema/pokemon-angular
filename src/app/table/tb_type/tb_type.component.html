@@ -32,7 +32,7 @@
           </tr>
         </thead>
         <tbody
-          *ngFor="let data of type_results; let index = index"
+          *ngFor="let data of type_results | slice: 0:6; let index = index"
           class="table-success"
         >
           <tr>

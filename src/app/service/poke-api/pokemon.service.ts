@@ -37,7 +37,7 @@ export class PokemonService {
   //type-list (pager)
   public getType() {
     this.offset = 0;
-    this.limit = 5;
+    this.limit = 999;
     this.url = `https://pokeapi.co/api/v2/type/?offset=${this.offset}&limit=${this.limit}`;
     return this.httpClient.get(this.url);
   }
@@ -45,7 +45,7 @@ export class PokemonService {
   //ability-list (pager)
   public getAbility() {
     this.offset = 0;
-    this.limit = 5;
+    this.limit = 999;
     this.url = `https://pokeapi.co/api/v2/ability/?offset=${this.offset}&limit=${this.limit}`;
     return this.httpClient.get(this.url);
   }
