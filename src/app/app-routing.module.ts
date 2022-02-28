@@ -4,6 +4,7 @@ import { HomePageComponent } from './page/home-page/home-page.component';
 import { PokemonPageComponent } from './page/pokemon-page/pokemon-page.component';
 import { AbilityPageComponent } from './page/ability-page/ability-page.component';
 import { TypePageComponent } from './page/type-page/type-page.component';
+import { PokemonInfoPageComponent } from './page/pokemon-info-page/pokemon-info-page.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,11 @@ const routes: Routes = [
     path:'pokemon-page',
     component: PokemonPageComponent,
     data: {title: 'Pokemon | Pokemon Page'}
+  },
+  {
+    path:'pokemon-page/pokemon-info',
+    component: PokemonInfoPageComponent,
+    data: {title: 'Pokemon | Pokemon-Info Page'}
   },
   {
     path:'ability-page',

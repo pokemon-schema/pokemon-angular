@@ -35,9 +35,9 @@ export class PokemonComponent implements OnInit {
 
   ngOnInit() {
     //pokemon-list (pager)
-    this.pokemonService.getPokemonList().subscribe((data: any) => {
+    this.pokemonService.getPokemonList(this.offset, this.limit).subscribe((data: any) => {
       this.offset = 0;
-      this.limit = 12;
+      this.limit = 9;
 
       this.data = data;
       this.pokemon_count = data.count;
@@ -57,15 +57,12 @@ export class PokemonComponent implements OnInit {
     this.pokemon_img = this.pokemonService.getPokemonImg();
   }
 
-  goPokemonInfoPageClick(index: number, data: any) {
+  goPokemonInfoPageClick(index: number) {
     this.pokemon_id = index + 1;
-    this.pokemon_name = data["name"];
-    this.pokemon_url = data["url"];
+    this.pokemonService.getPokemonInfo(this.pokemon_id);
     console.log(
       `btn-pokemon-info clicked! 
       pokemon_id: ${this.pokemon_id}
-      pokemon_name: ${this.pokemon_name}
-      pokemon_name: ${this.pokemon_url}
       `
     );
     // alert("hello");
@@ -74,8 +71,8 @@ export class PokemonComponent implements OnInit {
   goNextPageClick(offset: number, limit: number) {
     if (limit <= 898) { //this.pokemon_count
       
-      this.offset = offset + 12;
-      this.limit = limit + 12;
+      this.offset = offset + 9;
+      this.limit = limit + 9;
       console.log(
         `btn-page-next clicked! 
         pokemon_id: ${this.offset}
@@ -87,8 +84,8 @@ export class PokemonComponent implements OnInit {
 
   goPreviousPageClick(offset: number, limit: number) {
     if (offset > 0) {
-      this.offset = offset - 12;
-      this.limit = limit - 12;
+      this.offset = offset - 9;
+      this.limit = limit - 9;
       console.log(
         `btn-page-previous clicked! 
         pokemon_id: ${this.offset}

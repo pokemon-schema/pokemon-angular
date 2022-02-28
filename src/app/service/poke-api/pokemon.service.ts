@@ -14,15 +14,15 @@ export class PokemonService {
   url!: string;
 
   //pokemon-list (pager)
-  public getPokemonList() { //offset: number, limit: number
-    this.offset = 0;
+  public getPokemonList(offset: number, limit: number) {
+    this.offset = offset;
     this.limit = 898; //898
     this.url = `https://pokeapi.co/api/v2/pokemon/?offset=${this.offset}&limit=${this.limit}`;
     return this.httpClient.get(this.url);
   }
   //pokemon-info (id)
-  public getPokemonInfo() {
-    this.id = 1;
+  public getPokemonInfo(pokemon_id: number) {
+    this.id = pokemon_id;
     this.url = `https://pokeapi.co/api/v2/pokemon/${this.id}`;
     return this.httpClient.get(this.url);
   }
@@ -43,9 +43,9 @@ export class PokemonService {
   }
 
   //ability-list (pager)
-  public getAbility() {
-    this.offset = 0;
-    this.limit = 999;
+  public getAbility(offset: number, limit: number) {
+    this.offset = offset;
+    this.limit = limit;
     this.url = `https://pokeapi.co/api/v2/ability/?offset=${this.offset}&limit=${this.limit}`;
     return this.httpClient.get(this.url);
   }

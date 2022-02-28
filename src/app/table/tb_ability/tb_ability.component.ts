@@ -26,7 +26,7 @@ export class TableAbilityComponent implements OnInit {
 
   ngOnInit() {
 
-      this.pokemonService.getAbility().subscribe((data: any) => {
+      this.pokemonService.getAbility(this.offset, this.limit).subscribe((data: any) => {
       this.offset = 0;
       this.limit = 6;
 
