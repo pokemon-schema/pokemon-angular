@@ -59,7 +59,7 @@ export class TableAbilityComponent implements OnInit {
   }
 
   goNextPageClick(offset: number, limit: number) {
-    if (limit <= this.ability_count) {
+    if (limit <= 327) { //this.ability_count
       
       this.offset = offset + 6;
       this.limit = limit + 6;
