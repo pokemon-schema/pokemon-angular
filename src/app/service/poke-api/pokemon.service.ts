@@ -13,6 +13,15 @@ export class PokemonService {
   id!: number;
   url!: string;
 
+  baseUrl = "http://localhost:8080/";
+
+  /* ENDPOINT SPRINBOOT API: */
+  public getApiPokemonById(pokemon_id: number) {
+    this.id = pokemon_id;
+    this.url = `${this.baseUrl}/pokemon/id/${this.id}`;
+  }
+
+  /*DIRECT FROM POKE.API:*/
   //pokemon-list (pager)
   public getPokemonList(offset: number, limit: number) {
     this.offset = offset;
