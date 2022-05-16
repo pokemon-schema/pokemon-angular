@@ -16,26 +16,18 @@ export class PokemonService {
   baseUrl = "http://localhost:8080/";
 
   /* ENDPOINT SPRINBOOT API: */
-  public getApiPokemonById(pokemon_id: number) {
-    this.id = pokemon_id;
-    this.url = `${this.baseUrl}/pokemon/id/${this.id}`;
-  }
-
-  /*DIRECT FROM POKE.API:*/
-  //pokemon-list (pager)
   public getPokemonList(offset: number, limit: number) {
     this.offset = offset;
     this.limit = 898; //limit
-    this.url = `https://pokeapi.co/api/v2/pokemon/?offset=${this.offset}&limit=${this.limit}`;
+    this.url = `http://localhost:8080/pokemon/?offset=${this.offset}&limit=${this.limit}`;
     return this.httpClient.get(this.url);
   }
-  //pokemon-info (id)
   public getPokemonInfo(pokemon_id: number) {
     this.id = pokemon_id;
-    this.url = `https://pokeapi.co/api/v2/pokemon/${this.id}`;
+    this.url = `http://localhost:8080/pokemon/id/${this.id}`;
     return this.httpClient.get(this.url);
   }
-  
+ 
   //pokemon-sprite-utl (img)
   public getPokemonImg() {
     this.id = 1;

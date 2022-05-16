@@ -54,20 +54,25 @@
         </button>
       </div>
 
-      <button
-        class="btn btn-dark col-sm-8 col-md-3 col-lg-2 float-end"
-        (click)="goNextPageClick(offset, limit)"
-      >
-        <!-- next -->
-        <mat-icon>arrow_forward_ios</mat-icon>
-      </button>
-      <button
-        class="btn btn-dark col-sm-8 col-md-3 col-lg-2 float-end"
-        (click)="goPreviousPageClick(offset, limit)"
-      >
-        <!-- previous -->
-        <mat-icon>arrow_back_ios</mat-icon>
-      </button>
+      <div class="row">
+        <div class="text-light col-md-4 mt-1">
+          <h3>{{ offset + 1 }}-{{ limit + 1 }}</h3>
+        </div>
+        <button
+          class="btn btn-dark float-end col-md-4"
+          (click)="goPreviousPageClick(offset, limit)"
+        >
+          <!-- previous -->
+          <mat-icon>arrow_back_ios</mat-icon>
+        </button>
+        <button
+          class="btn btn-dark float-end col-md-4"
+          (click)="goNextPageClick(offset, limit)"
+        >
+          <!-- next -->
+          <mat-icon>arrow_forward_ios</mat-icon>
+        </button>
+      </div>
     </div>
   </div>
 </div>
