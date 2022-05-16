@@ -2,15 +2,26 @@
   class="row justify-content-center m-0 mb-2 pb-4 pt-4 bg-dark text-light"
   style="text-align: center"
 >
-  <h1>POKEMON ID: {{ pokemon_id }}</h1>
-  <h3>NAME: {{ name }}</h3>
-  <h3>BASE_EXPERIENCE: {{ base_experience }}</h3>
-  <h3>WEIGHT: {{ weight }}</h3>
-  <h3>HEIGHT: {{ height }}</h3>
-  <h3>BASE_HP: {{ base_hp }}</h3>
-  <h3>BASE_ATTACK: {{ base_attack }}</h3>
-  <h3>BASE_DEFENSE: {{ base_defense }}</h3>
-  <h3>BASE_SPECIAL_ATTACK: {{ base_special_attack }}</h3>
-  <h3>BASE_SPECIAL_DEFENSE: {{ base_special_defense }}</h3>
-  <h3>BASE_SPEED: {{ base_speed }}</h3>
+  <div>
+    <img
+      *ngIf="pokemon_img"
+      [src]="pokemon_img + pokemon_id + '.png'"
+      alt="pokemon_sprite"
+      width="300"
+      height="300"
+      noresize="noresize"
+    />
+
+    <h1>POKEMON ID: {{ pokemon_id }}</h1>
+    <h3>NAME: {{ name }}</h3>
+    <h3>BASE_EXPERIENCE: {{ base_experience }}</h3>
+    <h3>WEIGHT: {{ weight }}</h3>
+    <h3>HEIGHT: {{ height }}</h3>
+    <h3>BASE_HP: {{ base_hp }}</h3>
+    <h3>BASE_ATTACK: {{ base_attack }}</h3>
+    <h3>BASE_DEFENSE: {{ base_defense }}</h3>
+    <h3>BASE_SPECIAL_ATTACK: {{ base_special_attack }}</h3>
+    <h3>BASE_SPECIAL_DEFENSE: {{ base_special_defense }}</h3>
+    <h3>BASE_SPEED: {{ base_speed }}</h3>
+  </div>
 </div>

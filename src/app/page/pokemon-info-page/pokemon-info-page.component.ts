@@ -25,7 +25,10 @@ export class PokemonInfoPageComponent implements OnInit {
   base_special_defense!: number;
   base_speed!: number;
 
+  pokemon_img!: string;
+
   ngOnInit(): void {
+    this.pokemon_img = this.pokemonService.getPokemonImg();
     this.pokemon_id = 25;
     this.pokemonService.getPokemonInfo(this.pokemon_id).subscribe((data: any) => {
       this.pokemon_id = data["id"];

@@ -35,6 +35,7 @@ export class PokemonService {
     return this.url;
   }
 
+  
   //type-list (pager)
   public getType(offset: number, limit: number) {
     this.offset = offset;
