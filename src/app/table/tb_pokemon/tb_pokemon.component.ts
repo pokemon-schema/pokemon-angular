@@ -26,6 +26,17 @@ export class PokemonComponent implements OnInit {
   pokemon_previous!: string;
   pokemon_results!: [];
 
+  name!: string;
+  weight!: number;
+  height!: number;
+  base_experience!: number;
+  base_hp!: number;
+  base_attack!: number;
+  base_defense!: number;
+  base_special_attack!: number;
+  base_special_defense!: number;
+  base_speed!: number;
+
   //sprite
   pokemon_img!: string;
 
@@ -59,13 +70,13 @@ export class PokemonComponent implements OnInit {
 
   goPokemonInfoPageClick(index: number) {
     this.pokemon_id = index + 1;
+    // this.pokemonService.getPokemonInfo(this.pokemon_id);
     this.pokemonService.getPokemonInfo(this.pokemon_id);
     console.log(
       `btn-pokemon-info clicked! 
       pokemon_id: ${this.pokemon_id}
       `
     );
-    // alert("hello");
   }
 
   goNextPageClick(offset: number, limit: number) {

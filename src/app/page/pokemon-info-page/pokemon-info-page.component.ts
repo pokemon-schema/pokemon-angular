@@ -10,10 +10,9 @@ import { PokemonService } from 'src/app/service/poke-api/pokemon.service';
 export class PokemonInfoPageComponent implements OnInit {
   constructor(private pokemonService: PokemonService) { }
 
-  //AJUSTAR O ID PRA SER RECEBIDO PELO CLICK DO BOTÃO...
-  pokemon_id!: number;
 
   //api
+  pokemon_id!: number;
   name!: string;
   weight!: number;
   height!: number;
@@ -29,7 +28,7 @@ export class PokemonInfoPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.pokemon_img = this.pokemonService.getPokemonImg();
-    this.pokemon_id = 25;
+    this.pokemon_id = 88;
     this.pokemonService.getPokemonInfo(this.pokemon_id).subscribe((data: any) => {
       this.pokemon_id = data["id"];
       this.name = data["name"];
